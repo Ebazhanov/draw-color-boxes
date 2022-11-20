@@ -4,11 +4,9 @@ on: [push]
 jobs:
   cypress-e2e:
     runs-on: ubuntu-latest
-    container: cypress/browsers:latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Run Cypress tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: yarn cy:run
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn cy:run

@@ -1,3 +1,5 @@
+[![job](https://github.com/ebazhanov/draw-color-boxes/actions/workflows/e2e.yml/badge.svg?event=push)](https://github.com/Ebazhanov/draw-color-boxes/actions)
+
 # Draw colorful box
 
 
