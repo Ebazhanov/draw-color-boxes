@@ -43,23 +43,7 @@ export default function ColorBox() {
   return (
     <div className="flex min-h-screen">
       <div className="w-66 bg-gray-50 p-8 flex flex-col">
-        <div className="flex gap-x-4">
-          <div
-            className="border border-gray-800 w-12 h-12 flex justify-center cursor-pointer select-none hover:bg-green-100"
-            onClick={() => createNewItem()}
-            data-cy="plus-button"
-          >
-            <span className="text-4xl">+</span>
-          </div>
-          <div
-            onClick={() => deleteSelectedItem()}
-            className="border border-gray-800 w-12 h-12 flex justify-center cursor-pointer select-none hover:bg-green-100"
-            data-cy="minus-button"
-          >
-            <span className="text-5xl">-</span>
-          </div>
-        </div>
-        <div className="mt-8 flex gap-x-4">
+        <div className="mb-8 flex gap-x-4">
           {colors.map((col, i) => (
             <div
               data-cy="box-with-color"
@@ -73,13 +57,29 @@ export default function ColorBox() {
             ></div>
           ))}
         </div>
+        <div className="flex gap-x-4">
+          <div
+              className="border border-gray-800 w-12 h-12 flex justify-center cursor-pointer select-none hover:bg-green-100"
+              onClick={() => createNewItem()}
+              data-cy="plus-button"
+          >
+            <span className="text-4xl">+</span>
+          </div>
+          <div
+              onClick={() => deleteSelectedItem()}
+              className="border border-gray-800 w-12 h-12 flex justify-center cursor-pointer select-none hover:bg-green-100"
+              data-cy="minus-button"
+          >
+            <span className="text-5xl">-</span>
+          </div>
+        </div>
         <div className="mt-auto mb-8 mx-auto" data-cy="count-selected-elements">
           <span className="text-2xl">{items.length} Elements </span>
         </div>
         <div
           data-cy="clear-all-button"
           onClick={() => clearAll()}
-          className="cursor-pointer h-12 px-4 select-none border border-gray-800 flex items-center justify-center hover:bg-green-100"
+          className="mb-32 cursor-pointer h-12 px-4 select-none border border-gray-800 flex items-center justify-center hover:bg-green-100"
         >
           Clear
         </div>
